@@ -49,6 +49,7 @@
 ## Cast
 # Example
 - Cast(spell, unit)
+    
     if target.alive then
     return cast("Forstbolt", "player")
     end
