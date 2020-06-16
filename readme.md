@@ -19,33 +19,39 @@
         return cast("Ice Block", "player")
         end
         
-- exists()
+- .exists
 
         Check if a buff exists.
-- down()
+- .down
 
         Return true if a buff is down.
-- up()
+- .up
 
-        Returns true if a buff is up.
-- any()
+        Returns true if a buff is up and its YOUR buff.
+- .any
 
-        Return true if any buff is up.
-- count
+        Return true if any buff is up (from another source other than the player).
+- .count
 
         Returns the amount of buffs that are active.
-- remains
+- .remains
 
         Returns the remaning duration of the buff (in seconds).
-- duration
+- .duration
 
         Returns the duration of the buff.
-- stealable
+- .stealable
 
         Returns true if the buff can be spellstealed.
+        
+        
 
 ## Cast
+# Example
 - Cast(spell, unit)
+    if target.alive then
+    return cast("Forstbolt", "player")
+    end
     
         spell:
                 spell ID or name.
@@ -54,30 +60,37 @@
                 Unit (player, target, focus, party1, ..)
         
         example: 
-                Cast(SB.Stealth);
-                Cast(SB.ChaosBolt, "focus");
-                Cast(SB.Conflagurate, "party1");
+        
+                Cast(SB.Stealth)
+                Cast(SB.ChaosBolt, "focus")
+                Cast(SB.Conflagurate, "party1")
+                Cast(SB.Conflagurate, "target")
 
 ## Debuff
-- exists()
+# Example
+if player.debuff("Weekend Soul").down then 
+return cast("Power Word: Shield", "player")
+end
+
+- .exists
 
         Check if a debuff exists.
-- down()
+- .down
 
-        Return true if a debuff is down.
-- up()
+        Return true if a debuff is down and is your buff.
+- .up
 
-        Returns true if a debuff is up.
-- any()
+        Returns true if a debuff is up and is your buff.
+- .any
 
-        Return true if any debuff is up.
-- count
+        Return true if the debuff is up from any player.
+- .count
 
         Returns the amount of debuffs that are active.
-- remains
+- .remains
 
         Returns the remaning duration of the debuff (in seconds).
-- duration
+- .duration
 
         Returns the duration of the debuff.
 
